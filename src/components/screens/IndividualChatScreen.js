@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, StyleSheet, FlatList, 
+import {ImageBackground, StyleSheet, FlatList, 
   KeyboardAvoidingView, Platform } from 'react-native'
 import bg from '../../assets/images/BG.png'
 import messages from '../../assets/data/messages.json'
@@ -17,6 +17,7 @@ const IndividualChatScreen = () => {
   
   return (
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}
+    keyboardVerticalOffset={Platform.OS === "ios" ? 60 : 90}
     style={styles.imageBG}
     >
     <ImageBackground source={bg} style={styles.imageBG}>

@@ -1,4 +1,4 @@
-import {  FlatList } from 'react-native';
+import {  FlatList, StyleSheet } from 'react-native';
 import chats from '../../assets/data/chats.json'
 import ChartListItem from '../ChatListItem'
 
@@ -9,8 +9,10 @@ const ChatScreen  = () => {
     renderItem={( {item} ) =>
       <ChartListItem chat={item}/>
     }
+    style={{backgroundColor: "white"}}
     />
   )
 }
 
 export default ChatScreen 
+
