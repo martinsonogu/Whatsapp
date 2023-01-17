@@ -4,6 +4,7 @@ import ChatScreen from "../screens/ChatScreen"
 import {Ionicons, Entypo} from "@expo/vector-icons"
 
 
+
 const Tab = createBottomTabNavigator();
 
 const MainTabNavigator = () => {
@@ -30,18 +31,19 @@ const MainTabNavigator = () => {
       }}
       />
       <Tab.Screen name="Chats" component={ChatScreen} 
-      options={{
+      options={({navigation}) => ({
         tabBarIcon: ({color, size}) => (
         <Ionicons name="ios-chatbubbles-sharp" size={size} color={color}/>
         ),
         headerRight: ({color}) => (
           <Entypo 
+          onPress={() => navigation.navigate('Contacts')}
           name="new-message"
           size={18}
           color={'royalblue'}
           style={{marginRight: 15}}
           />)
-      }}
+      })}
       />
       <Tab.Screen name="Settings" component={Dummy} 
       options={{
